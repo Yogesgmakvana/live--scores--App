@@ -146,14 +146,14 @@ class _SplashScreenState extends State<SplashScreen>
               child: _buildHeader(context, "Live Scores", darkColor),
             ),
             // Image.asset('assets/logo/splash_animated.png',fit: BoxFit.cover,),
-            SizedBox(
-  width: double.infinity,
-  height: MediaQuery.of(context).size.height,
-  child: Image.asset(
-    'assets/logo/splash_animated.png',
-    fit: BoxFit.cover,
-  ),
-)
+            Center(
+              child: SizedBox(
+                child: Image.asset(
+                  'assets/logo/cricket.png',
+                  fit: BoxFit.cover,
+                ),
+              ),
+            )
           ],
         ),
       ),
