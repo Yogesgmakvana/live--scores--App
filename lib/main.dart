@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:live_scores/screens/auth/register_screen.dart';
 import 'package:live_scores/screens/home_screen.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'package:live_scores/splash_screen.dart';
-import 'firebase_options.dart';
+import 'package:live_scores/screens/splash_screen.dart';
+import 'firebase/firebase_options.dart';
 
 void main()async {
    WidgetsFlutterBinding.ensureInitialized();
