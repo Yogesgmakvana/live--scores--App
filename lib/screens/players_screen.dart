@@ -19,10 +19,6 @@ class _PlayersScreenState extends State<PlayersScreen> {
     super.initState();
   }
 
-
-  getData()async{
-    
-  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(

@@ -140,7 +140,6 @@ class _SplashScreenState extends State<SplashScreen>
       body: SingleChildScrollView(
         child: Column(
           children: [
-            
             SlideTransition(
               position: _headerAnimation,
               child: _buildHeader(context, "Live Scores", darkColor),

@@ -17,7 +17,15 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+    
     return MaterialApp(
+      theme: ThemeData(
+           scaffoldBackgroundColor: Color(0xffFFFBBD),
+      ),
+      darkTheme: ThemeData(
+          scaffoldBackgroundColor: Color(0xff321325),
+      ),
+      themeMode:ThemeMode.dark ,
       debugShowCheckedModeBanner: false,
       home: SplashScreen(),
     );

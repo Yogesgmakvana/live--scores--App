@@ -6,6 +6,7 @@ import 'package:live_scores/widgtes/bottom_auth_widget.dart';
 import 'package:live_scores/screens/home_screen.dart';
 import 'package:live_scores/utils/Util.dart';
 import 'package:live_scores/widgtes/header.dart';
+import 'package:toastification/toastification.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -159,7 +160,7 @@ class _LoginScreenState extends State<LoginScreen> {
           password: _passwordLoginController.text.trim(),
         )
         .then((value) {
-          Util().toastMsg('Logged In Succsessfully!');
+          Util().toastMsg('Logged In Succsessfully!',context);
           setState(() {
             isLoading1 = false;
           });
@@ -169,7 +170,7 @@ class _LoginScreenState extends State<LoginScreen> {
           );
         })
         .onError((error, stackTrace) {
-          Util().toastMsg(error.toString());
+          Util().toastMsg(error.toString(),context);
           setState(() {
             isLoading1 = false;
           });

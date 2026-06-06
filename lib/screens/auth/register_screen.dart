@@ -253,7 +253,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
           password: _confirmPasswordController.text.trim(),
         )
         .then((value) {
-             Util().toastMsg('account created succsessfully!');
+             Util().toastMsg('account created succsessfully!',context);
           //go to next screen
           Navigator.push(context, MaterialPageRoute(builder: (context)=>LoginScreen()));
 
@@ -262,7 +262,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
      });
         })
         .onError((error, stackTrace) {
-          Util().toastMsg(error.toString());
+          Util().toastMsg(error.toString(),context);
           setState(() {
        isLoading=false;
      });

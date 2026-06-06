@@ -9,6 +9,7 @@ import 'package:live_scores/screens/auth/login_screen.dart';
 import 'package:live_scores/constants/text_string.dart';
 import 'package:live_scores/screens/players_screen.dart';
 import 'package:live_scores/utils/Util.dart';
+import 'package:live_scores/widgtes/tile_box.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -25,21 +26,24 @@ class _HomeScreenState extends State<HomeScreen> {
     _auth
         .signOut()
         .then((value) {
+          Util().toastMsg("Logged out successfully!", context);
           Navigator.pushReplacement(
             context,
             MaterialPageRoute(builder: (context) => LoginScreen()),
           );
         })
         .onError((error, stackTrace) {
-          Util().toastMsg(error.toString());
+          Util().toastMsg(error.toString(),context);
         });
   }
+
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Color(0xffFFFBBD),
+        // backgroundColor: Color(0xff321325),
         actions: [
           IconButton(
             onPressed: () {
@@ -76,6 +80,8 @@ class _HomeScreenState extends State<HomeScreen> {
                   );
                 },
               );
+
+              // Util().toastMsg("Hello", context);
             },
             icon: Icon(Icons.logout_outlined),
           ),
@@ -109,36 +115,18 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ),
 
-            InkWell(
-              onTap: () {
-                Navigator.push(
+            TileBox(titleText: "All Matches",onTap: () {
+              Navigator.push(
                   context,
                   MaterialPageRoute(builder: (context) => HomeScreen()),
                 );
-              },
-              child: Card(
-                elevation: 4.5,
-                child: ListTile(
-                  trailing: Icon(Icons.arrow_circle_right),
-                  title: Text('All Matches', style: TextStyle(fontFamily: X)),
-                ),
-              ),
-            ),
-            InkWell(
-              onTap: () {
-                Navigator.push(
+            },),
+            TileBox(titleText: "Players",onTap: () {
+               Navigator.push(
                   context,
                   MaterialPageRoute(builder: (context) => PlayersScreen()),
                 );
-              },
-              child: Card(
-                elevation: 4.5,
-                child: ListTile(
-                  trailing: Icon(Icons.arrow_circle_right),
-                  title: Text('Players', style: TextStyle(fontFamily: X)),
-                ),
-              ),
-            ),
+            },),
             Card(
               elevation: 4.5,
               child: ListTile(
@@ -146,20 +134,12 @@ class _HomeScreenState extends State<HomeScreen> {
                 title: Text('Help', style: TextStyle(fontFamily: X)),
               ),
             ),
-            Card(
-              elevation: 4.5,
-              child: ListTile(
-                trailing: Icon(Icons.arrow_circle_right),
-                title: Text('Contact', style: TextStyle(fontFamily: X)),
-              ),
-            ),
-            Card(
-              elevation: 4.5,
-              child: ListTile(
-                trailing: Icon(Icons.arrow_circle_right),
-                title: Text('About us', style: TextStyle(fontFamily: X)),
-              ),
-            ),
+            TileBox(titleText: "Contact",onTap: () {
+              
+            },),
+             TileBox(titleText: "About us",onTap: () {
+               
+             },)
             //  InkWell(
             //   onTap: () {
             //     _auth.signOut().then((value) {
@@ -182,6 +162,7 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
       ),
       backgroundColor: Color(0xffFFFBBD),
+      // backgroundColor: Color(0xff321325),
       body: Column(
         children: [
           Expanded(
