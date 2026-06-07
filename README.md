@@ -1,6 +1,6 @@
 # 🏏 Live Scores Flutter App
 
-A modern Flutter application that provides real-time cricket match updates using a REST API. The app includes Firebase Authentication, animated splash screens, profile management, clean architecture, and a responsive UI.
+A production-ready Flutter Cricket Live Score application featuring Firebase Authentication, REST API integration, animated splash screens, profile management, clean architecture, GitHub Actions CI/CD pipeline, and automated APK releases.
 
 ---
 
@@ -14,35 +14,46 @@ A modern Flutter application that provides real-time cricket match updates using
 * Persistent Login Session
 * Logout Functionality
 
-### 🏏 Live Cricket Scores
+### 🏏 Live Cricket Data
 
-* Real-time cricket match data using REST API
-* Upcoming Matches
+* Real-time Cricket Match Data
 * Live Matches
+* Upcoming Matches
 * Match Details
 * Team Information
 * Player Information
+* REST API Integration (Entity Sport API)
 
 ### 👤 Profile Management
 
-* View User Profile
-* Update Profile Information
-* Manage Authentication State
+* User Profile Screen
+* Authentication State Management
+* Secure User Session Handling
 
-### 🎨 UI Features
+### 🎨 Modern UI
 
-* Modern Material Design
-* Dark Theme Support
 * Animated Splash Screen
+* Material Design 3
+* Dark Theme Support
 * Reusable Widgets
 * Responsive Layout
-* Centralized Color Management
+* Centralized Theme Management
+* Clean User Experience
 
-### ⚙️ Configuration
+### ⚙️ Configuration Management
 
-* Separate file for API Token
-* Separate file for Base URL
-* Easy API configuration management
+* Separate API Configuration File
+* Separate Base URL Management
+* Separate API Token Management
+* Easy Environment Configuration
+
+### 🚀 CI/CD Automation
+
+* GitHub Actions Workflow
+* Automated APK Build
+* Automated Release Creation
+* Version-based Deployment
+* Release Asset Upload
 
 ---
 
@@ -61,7 +72,7 @@ lib/
 │   ├── colors.dart
 │   └── text_string.dart
 │
-├── firebaseServices/
+├── firebase/
 │   └── firebase_options.dart
 │
 ├── models/
@@ -89,38 +100,75 @@ lib/
 
 ---
 
-## 🛠 Technologies Used
+## 🛠 Tech Stack
+
+### Frontend
 
 * Flutter
 * Dart
+
+### Backend Services
+
 * Firebase Authentication
+
+### API Integration
+
 * REST API
 * HTTP Package
-* Material Design
+* Entity Sport Cricket API
+
+### DevOps
+
+* Git
+* GitHub
+* GitHub Actions
+* CI/CD Pipeline
+
+### UI/UX
+
+* Material Design 3
+* Custom Theme System
+* Reusable Widgets
 
 ---
 
-## 🔥 Firebase Setup
+## 🔥 Firebase Integration
 
-1. Create a Firebase Project.
-2. Enable Authentication.
-3. Add Android/iOS Application.
-4. Download configuration files.
-5. Run:
+### Authentication Features
+
+* Email & Password Login
+* User Registration
+* Session Persistence
+* Logout Management
+
+### Firebase Setup
+
+1. Create Firebase Project
+2. Enable Authentication
+3. Configure Android/iOS Apps
+4. Run:
 
 ```bash
 flutterfire configure
 ```
 
-6. Ensure `firebase_options.dart` is generated successfully.
+5. Generated File:
+
+```text
+lib/firebaseServices/firebase_options.dart
+```
 
 ---
 
 ## 🌐 API Configuration
 
-Create a separate configuration file:
+### Secret Configuration
 
-### `lib/config/secret.dart`
+Create:
+
+```text
+lib/config/secret.dart
+```
 
 ```dart
 class Secret {
@@ -132,7 +180,7 @@ class Secret {
 }
 ```
 
-Example API Call:
+### Example API Call
 
 ```dart
 final response = await http.get(
@@ -144,9 +192,9 @@ final response = await http.get(
 
 ---
 
-## 🎨 Theme & Colors
+## 🎨 Theme & Color Management
 
-All colors are managed from:
+All application colors are managed from:
 
 ```text
 lib/constants/colors.dart
@@ -154,74 +202,135 @@ lib/constants/colors.dart
 
 Benefits:
 
-* Easy Theme Management
-* Reusable Colors
+* Single Source of Truth
+* Easy Theme Updates
 * Consistent UI Design
-* Dark Theme Support
+* Better Maintainability
 
 ---
 
-## 🚀 Getting Started
-
-### Clone Repository
-
-```bash
-git clone <repository-url>
-```
-
-### Install Dependencies
-
-```bash
-flutter pub get
-```
-
-### Run Application
-
-```bash
-flutter run
-```
-
----
-
-## 📸 Application Flow
+## 📱 Application Flow
 
 ```text
-Splash Screen
-      ↓
-Authentication Check
-      ↓
+Animated Splash Screen
+          ↓
+Firebase Auth Check
+          ↓
 Login / Register
-      ↓
+          ↓
 Home Screen
-      ↓
-Match List
-      ↓
+          ↓
+Match Listing
+          ↓
 Match Details
-      ↓
+          ↓
 Player Details
 ```
 
 ---
 
+## 🚀 CI/CD Pipeline
+
+This project uses GitHub Actions for automated build and release management.
+
+### Workflow Features
+
+* Automatic Flutter Setup
+* Dependency Installation
+* APK Build Generation
+* GitHub Release Creation
+* APK Upload to Releases
+* Version-Based Deployment
+
+### Workflow Structure
+
+```text
+Push Tag
+    ↓
+GitHub Actions
+    ↓
+Flutter Build APK
+    ↓
+Generate Release
+    ↓
+Upload APK
+    ↓
+GitHub Release Ready
+```
+
+### Workflow File
+
+```text
+.github/workflows/release.yml
+```
+
+### Create New Release
+
+```bash
+git tag v1.0.0
+git push origin v1.0.0
+```
+
+GitHub Actions automatically:
+
+* Builds APK
+* Creates Release
+* Uploads APK Asset
+
+---
+
 ## 🔒 Security
 
-Add secret files to `.gitignore`:
+Sensitive information is stored separately:
+
+```text
+lib/config/secret.dart
+```
+
+Add to `.gitignore`:
 
 ```gitignore
 lib/config/secret.dart
 ```
 
-If using environment variables:
+Never commit:
 
-```gitignore
-.env
-```
-
-Never upload API Tokens or private keys to GitHub.
+* API Tokens
+* Private Keys
+* Secrets
+* Environment Credentials
 
 ---
 
-## 📱 Screens
+## 📦 Installation
+
+### Clone Repository
+
+```bash
+git clone https://github.com/your-username/live_scores.git
+```
+
+### Install Packages
+
+```bash
+flutter pub get
+```
+
+### Run Project
+
+```bash
+flutter run
+```
+
+### Build APK
+
+```bash
+flutter build apk --release
+```
+
+---
+
+## 📸 Screens Included
 
 * Animated Splash Screen
 * Login Screen
@@ -229,7 +338,23 @@ Never upload API Tokens or private keys to GitHub.
 * Home Screen
 * Match Details Screen
 * Player Details Screen
-* Profile Screen
+* Profile Management Screen
+
+---
+
+## 🎯 Learning Objectives
+
+This project demonstrates:
+
+* Firebase Authentication
+* REST API Integration
+* Flutter State Management
+* Clean Project Structure
+* Reusable Widgets
+* Theme Management
+* Secure API Configuration
+* GitHub Actions CI/CD
+* Release Automation
 
 ---
 
@@ -239,8 +364,24 @@ Never upload API Tokens or private keys to GitHub.
 
 BCA Student | Flutter Developer
 
+### Skills
+
+* Flutter
+* Dart
+* Firebase
+* REST APIs
+* Git & GitHub
+* CI/CD
+* Android Development
+
+---
+
+## ⭐ Support
+
+If you like this project, consider giving it a star on GitHub.
+
 ---
 
 ## 📄 License
 
-This project is created for learning and portfolio purposes.
+This project is developed for learning, portfolio, and educational purposes.
