@@ -1,8 +1,16 @@
 # 🏏 Live Scores Flutter App
 
 A production-ready Flutter Cricket Live Score application featuring Firebase Authentication, REST API integration, animated splash screens, profile management, clean architecture, GitHub Actions CI/CD pipeline, and automated APK releases.
-D:\Flutter programmes\live_scores\screenshoots\App_photo.png
-D:\Flutter programmes\live_scores\screenshoots\App_photo2.png
+
+
+<p align="center">
+  <img src="screenshoots\App_photo.png" width="100%">
+</p>
+
+<p align="center">
+  <img src="screenshoots\App_photo2.png" width="100%">
+</p>
+
 
 
 ## ✨ Features
